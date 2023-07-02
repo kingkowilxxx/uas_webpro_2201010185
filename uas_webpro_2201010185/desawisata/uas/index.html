@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulau Bali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Averia+Libre:wght@700&family=Coda&family=Quantico&family=Rowdies&display=swap" rel="stylesheet"/>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .crsImg {
+        background-color: black;
+      }
+      .carouselImage {
+        opacity: 0.5;
+        height: 100vh;
+      }
+      .opacityFull {
+        z-index: 99;
+        opacity: 1 !important;
+      }
+      .fontBrand {
+        font-family: "Rowdies", cursive;
+        font-size: 25px;
+        letter-spacing: 2px;
+      }
+      .fontBrand span {
+        color: rgb(229, 255, 0);
+      }
+      .fontNav {
+        font-family: "Quantico", sans-serif;
+        letter-spacing: 2px;
+      }
+      .fontBanner {
+        font-family: "Averia Libre", cursive;
+      }
+      .let {
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark p-3">
+      <div class="container">
+        <a href="#" class="navbar-brand fontBrand">PULAU<span>BALI</span></a>
+        <button type="button" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" aria-controls="navbarNav" aria-expanded="false"aria-labelledby="Toggle Navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-white fontNav">
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="tradisi.html" class="nav-link">Tradisi</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="akomodasi.html" class="nav-link">Akomodasi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+      </div>
+      <div class="carousel-inner fontBanner">
+        <div class="carousel-item active crsImg">
+          <div
+            class="carousel-caption d-flex flex-column justify-content-center align-items-center vh-100 opacityFull"
+          >
+            <h1 class="text-white mb-3">
+              Bingung Mau Liburan Kemana? KE BALI AJA!!
+            </h1>
+            <a
+              href="pariwisata.html#titleImp"
+              type="button"
+              class="btn btn-danger btn-lg"
+              ><i class="bi bi-browser-safari fs-4 me-2"></i>JELAJAHI</a
+            >
+          </div>
+
+          <img
+            src="../img/index/banner/1.jpg"
+            class="d-block w-100 carouselImage"
+            alt="..."
+          />
+        </div>
+        
+        <div class="carousel-item crsImg">
+          <div
+            class="carousel-caption d-flex flex-column justify-content-center align-items-center vh-100 opacityFull"
+          >
+            <h1 class="text-white mb-3 let">KABUPATEN BADUNG</h1>
+            <a
+              href="pariwisata.html#BADUNG"
+              type="button"
+              class="btn btn-danger btn-lg"
+              ><i class="bi bi-browser-safari fs-4 me-2"></i>JELAJAHI</a
+            >
+          </div>
+
+          <img
+            src="../img/index/banner/2.jpg"
+            class="d-block w-100 carouselImage"
+            alt="..."
+          />
+        </div>
+        
+        <div class="carousel-item crsImg">
+          <div
+            class="carousel-caption d-flex flex-column justify-content-center align-items-center vh-100 opacityFull"
+          >
+            <h1 class="text-white mb-3 let">KABUPATEN DENPASAR</h1>
+            <a
+              href="pariwisata.html#DENPASAR"
+              type="button"
+              class="btn btn-danger btn-lg"
+              ><i class="bi bi-browser-safari fs-4 me-2"></i>JELAJAHI</a
+            >
+          </div>
+
+          <img
+            src="../img/index/banner/6.jpg"
+            class="d-block w-100 carouselImage"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item crsImg">
+          <div
+            class="carousel-caption d-flex flex-column justify-content-center align-items-center vh-100 opacityFull"
+          >
+            <h1 class="text-white mb-3 let">KABUPATEN GIANYAR</h1>
+            <a
+              href="pariwisata.html#GIANYAR"
+              type="button"
+              class="btn btn-danger btn-lg"
+              ><i class="bi bi-browser-safari fs-4 me-2"></i>JELAJAHI</a
+            >
+          </div>
+
+          <img
+            src="../img/index/banner/7.jpg"
+            class="d-block w-100 carouselImage"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
