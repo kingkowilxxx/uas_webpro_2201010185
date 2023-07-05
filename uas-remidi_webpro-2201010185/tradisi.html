@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulau Bali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Averia+Libre:wght@700&family=Coda&family=Quantico&family=Rowdies&display=swap"
+    rel="stylesheet" />
+  <!-- aos js -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Coda", cursive;
+      overflow-x: hidden;
+    }
+
+    .otto {
+      color: white;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+        0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .crsImg {
+      background-color: black;
+    }
+
+    .carouselImage {
+      opacity: 0.5;
+      height: 100vh;
+    }
+
+    .opacityFull {
+      z-index: 99;
+      opacity: 1 !important;
+    }
+
+    .fontBrand {
+      font-family: "Rowdies", cursive;
+      font-size: 25px;
+      letter-spacing: 2px;
+    }
+
+    .fontBrand span {
+      color: rgb(229, 255, 0);
+    }
+
+    .fontNav {
+      font-family: "Quantico", sans-serif;
+      letter-spacing: 2px;
+    }
+
+    .fontBanner {
+      font-family: "Averia Libre", cursive;
+    }
+
+    .let {
+      letter-spacing: 2px;
+    }
+
+    .text-justify {
+      text-indent: 10px;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    /* navbar */
+    nav {
+      transition: 0.6s;
+    }
+
+    .bgNav {
+      padding: 10px !important;
+      background-color: rgb(46 61 77);
+    }
+
+    /* banner */
+    .banner {
+      height: 90vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/img/index/banner/7.jpg');
+      background-size: cover;
+    }
+
+    [data-aos][data-aos][data-aos-duration="400"],
+    body[data-aos-duration="400"] [data-aos] {
+      transition-duration: 0.8s;
+    }
+
+    /* gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 100%;
+    }
+
+    .gallery-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark p-3">
+    <div class="container">
+      <a href="#" class="navbar-brand fontBrand">PULAU<span>BALI</span></a>
+      <button type="button" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse"
+        aria-controls="navbarNav" aria-expanded="false" aria-labelledby="Toggle Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-white fontNav">
+          <li class="nav-item mx-2">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="#" class="nav-link active">Tradisi</a>
+          <li class="nav-item mx-2">
+            <a href="akomodasi.html" class="nav-link">Akomodasi</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- banner -->
+  <div class="container-fluid banner d-flex flex-column justify-content-center align-items-center">
+    <div class="container text-white text-center">
+      <h1 class="fontBanner display-2 let otto">WELCOME TO BALI</h1>
+      <h1 class="fontBanner let otto">TRADISI DI BALI</h1>
+      <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+        <div class="input-group info-group-lg">
+          <select class="form-select" id="jenis" aria-label="Example select with button addon">
+            <option selected disabled hidden>-PILIH KABUPATEN-</option>
+            <option value="Badung">Badung</option>
+            <option value="Denpasar">Denpasar</option>
+            <option value="Gianyar">Gianyar</option>
+          </select>
+          <button class="btn btn-warning" type="button" id="search">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tradisi 1 -->
+  <div class="container-fluid py-5" id="kabBadung">
+    <div class="p-5">
+      <h1 class="h1Bad text-center fw-bolder mb-5" data-aos="fade-up">
+        Kabupaten Badung
+      </h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-5 align-self-center" data-aos="fade-right">
+          <h2 class="text-center text-lg-start fw-bolder mb-3">
+            Tradisi Mekotek, Desa Munggu
+          </h2>
+          <p class="text-justify">
+            Upacara Mekotek dilaksanakan dengan tujuan memohon keselamatan.
+            Upacara yang juga di kenal dengan istilah ngerebek. Mekotek ini
+            adalah warisan leluhur, adat budaya dan tradisi yang secara turun
+            temurun terus dilakukan umat Hindu di Bali.
+          </p>
+          <p class="text-justify">
+            Mekotek sendiri diambil dari kata tek-tek yang merupakan bunyi
+            kayu yang diadu satu sama lain sehingga menimbulkan bunyi.
+            Perayaan upacara Mekotek selalu dilakukan oleh warga Desa Munggu,
+            Kecamatan Mengwi, Kabupaten Badung, Bali, pada setiap Hari Raya
+            Kuningan. Selain sebagai simbol kemenangan, Mekotek juga merupakan
+            upaya untuk menolak bala yang pernah menimpa desa puluhan tahun
+            lalu.
+          </p>
+        </div>
+        <div class="col-lg-6 offset-lg-1 align-self-center d-flex flex-column justify-content-center"
+          data-aos="fade-left">
+          <img src="img/tradisi/badung/1.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+      </div>
+    </div>
+
+    <!-- tradisi 2 -->
+    <div class="p-5">
+      <div class="row">
+        <div class="col-lg-6 align-self-center d-flex flex-column justify-content-center order-2 order-lg-1"
+          data-aos="fade-right">
+          <img src="img/tradisi/badung/2.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+        <div class="col-lg-5 offset-lg-1 align-self-center order-1 order-lg-2" data-aos="fade-left">
+          <h2 class="text-center text-lg-end fw-bolder mb-3">
+            Tradisi Siat Yeh, Desa Jimbaran
+          </h2>
+          <p class="text-justify">
+            Tradisi Siat Yeh ini dikatakan juga sebagai penglukatan Agung, di
+            awali dengan mendak tirta (air suci) di dua tempat sumber air yang
+            berbeda yaitu pada bagian pesisir sebelah Timur (pantai
+            Suwung/rawah) dan pesisir Sebelah Barat (pantai Segara).
+          </p>
+          <p class="text-justify">
+            Pertemuan sumber air tersebut dikenal dengan campuhan (pertemuan
+            dua sumber air), dan air campuhan biasa digunakan sebagai tempat
+            untuk melukat bagi warga Hindu Bali Namun, sekarang ini
+            berkembangnya pariwisata yang sangat pesat di kawasan
+            Jimbaran,Badung banyaknya pembangunan fasilitas pariwisata di
+            daerah tersebut.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- tradisi 9 -->
+  <div class="container-fluid py-5" id="kabGianyar">
+    <div class="p-5">
+      <h1 class="text-center fw-bolder mb-5" data-aos="fade-up">
+        Kabupaten Gianyar
+      </h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-5 align-self-center" data-aos="fade-right">
+          <h2 class="text-center text-lg-start fw-bolder mb-3">
+            Tradisi Ngerebeg, Desa Tegalalang
+          </h2>
+          <p class="text-justify">
+            Tradisi ngerebeg di Desa Adat Tegallalang, Kabupaten Gianyar,
+            Bali, ditetapkan sebagai Warisan Budaya Tak Benda Indonesia oleh
+            Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi
+            (Kemendikbudristek).
+          </p>
+          <p class="text-justify">
+            Tradisi ini digelar sehari menjelang piodalan Pura Duur Bingin di
+            Desa Adat Tegallalang, setiap enam bulan sekali berdasarkan sistem
+            penanggalan Bali, tepatnya pada Wraspati Umanis Pahang.Tradisi ini
+            dijalani oleh anak-anak dan remaja, yang tubuhnya dipenuhi hiasan
+            menyeramkan. Mereka pun mengikuti arak-arakan keliling desa
+            sembari membawa hiasan penjor dari pelepah salak dan pelepah daun
+            jaka atau aren.
+          </p>
+        </div>
+        <div class="col-lg-6 offset-lg-1 align-self-center d-flex flex-column justify-content-center"
+          data-aos="fade-left">
+          <img src="img/tradisi/gianyar/1.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+      </div>
+    </div>
+
+    <!-- tradisi 10 -->
+    <div class="p-5">
+      <div class="row">
+        <div class="col-lg-6 align-self-center d-flex flex-column justify-content-center order-2 order-lg-1"
+          data-aos="fade-right">
+          <img src="img/tradisi/gianyar/2.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+        <div class="col-lg-5 offset-lg-1 align-self-center order-1 order-lg-2" data-aos="fade-left">
+          <h2 class="text-center text-lg-end fw-bolder mb-3">
+            Tradisi Mesbes Bangke, Desa Banjar Buruan
+          </h2>
+          <p class="text-justify">
+            Awal mula tradisi mesbes bangke ini berawal dari kisah yang konon
+            katanya, dahulu penduduk asli banjar Buruan ini kebingungan untuk
+            menghilangkan bau busuk yang dikeluarkan oleh mayat, karena zaman
+            dulu tidak ada formalin, mereka harus mencari cara agar mayat
+            tidak berbau bau busuk yang dikeluarkan mayat tersebut.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- tradisi 11 -->
+  <div class="container-fluid py-5" id="kabDenpasar">
+    <div class="p-5">
+      <h1 class="text-center fw-bolder mb-5" data-aos="fade-up">
+        Kabupaten Denpasar
+      </h1>
+
+      <div class="row">
+        <div class="col-12 col-lg-5 align-self-center" data-aos="fade-right">
+          <h2 class="text-center text-lg-start fw-bolder mb-3">
+            Tradisi Ngerebong, Desa Kesiman
+          </h2>
+          <p class="text-justify">
+            Ngerebong adalah salah satu tradisi yang masih dipegang teguh oleh
+            masyarakat Bali, khususnya oleh masyarakat yang ada di Desa
+            Kesiman, Denpasar. Tidak hanya itu, tradisi ini juga menjadi daya
+            tarik lain para wisatawan. Ngerebong sendiri merupakan bahasa Bali
+            yang memiliki arti berkumpul.
+          </p>
+          <p class="text-justify">
+            Pusat diadakannya Tradisi Ngerebong Bali berada di Pura Petilan,
+            yang terletak di daerah Kesiman. Sebelum dimulainya acara puncak,
+            biasanya masyarakat sudah memenuhi area acara. disana juga sudah
+            terdapat beberapa suguhan seperti alunan musik tradisional,
+            bunga-bungaan dalam tempayan cantik, serta penjor-penjor. Sebelum
+            upacara dimulai, para pecalang atau yang biasa disebut polisi adat
+            akan mengosongkan jalanan atau menutup jalan. Jalanan ditutup
+            sebab upacara dan serangkaian tradisi ngerebong memang sakral.
+          </p>
+        </div>
+        <div class="col-lg-6 offset-lg-1 align-self-center d-flex flex-column justify-content-center"
+          data-aos="fade-left">
+          <img src="img/tradisi/denpasar/1.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+      </div>
+    </div>
+
+    <!-- tradisi 12 -->
+    <div class="p-5">
+      <div class="row">
+        <div class="col-lg-6 align-self-center d-flex flex-column justify-content-center order-2 order-lg-1"
+          data-aos="fade-right">
+          <img src="img/tradisi/denpasar/2.jpg" alt="" class="img-fluid rounded d-block" />
+        </div>
+        <div class="col-lg-5 offset-lg-1 align-self-center order-1 order-lg-2" data-aos="fade-left">
+          <h2 class="text-center text-lg-end fw-bolder mb-3">
+            Tradisi Omed-omedan, Desa Sesetan
+          </h2>
+          <p class="text-justify">
+            Dari sekian banyak tradisi perayaan Hari Raya Nyepi, ada sebuah
+            tradisi unik yang hanya dapat ditemui di Banjar Kaja Sesetan, Desa
+            Sesetan, Denpasar. Tradisi tersebut bernama omed-omedan, yaitu
+            ritual saling peluk dan tarik-menarik secara bergantian antara dua
+            kelompok muda-mudi yang rutin diadakan setiap tahun pada hari
+            pertama setelah Nyepi.
+          </p>
+          <p class="text-justify">
+            Menurut salah seorang penglingsir dari Desa Sesetan, I Gusti
+            Ngurah Oka Putra, omed-omedan diperkirakan telah ada sejak abad
+            ke-17 dan terus berlangsung hingga saat ini. Menurut pewaris Puri
+            Oka yang akrab disapa Ngurah Bima ini, “omed-omedan” berasal dari
+            kata “omed” yang berarti menarik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- </div>
+  </div>
+  </div>
+  </div> -->
+
+  <!-- gallery -->
+  <h1 class="text-center mb-2">Take A Picture! About Bali</h1>
+  <div class="gallery" id="gallery">
+    <!-- Add more gallery items here -->
+  </div>
+
+
+
+  <!-- footer -->
+  <div class="container-fluid bg-dark text-light py-3">
+    <div class="container d-flex justify-content-between">
+      <p>&copy;2023 Pulau Bali</p>
+      <p>Created by:WidyaNata Merta</p>
+    </div>
+  </div>
+  <!-- end of footer -->
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script>
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 100) {
+        nav.classList.add("bgNav", "shadow");
+      } else {
+        nav.classList.remove("bgNav", "shadow");
+      }
+    });
+  </script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- search -->
+  <script>
+    $("#search").click(function () {
+      const jenis = $("#jenis").val();
+      if (jenis == "Badung") {
+        const scrollPos = $("#kabBadung").offset().top;
+        $(window).scrollTop(scrollPos);
+      } else if (jenis == "Denpasar") {
+        const scrollPos = $("#kabDenpasar").offset().top;
+        $(window).scrollTop(scrollPos);
+      } else if (jenis == "Gianyar") {
+        const scrollPos = $("#kabGianyar").offset().top;
+        $(window).scrollTop(scrollPos);
+      }
+    });
+  </script>
+  <!-- aos js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    let APIKey = 'Jk8J4Waw08i_q2Ickqbcnd03MCQk0GZuGVOaYiQtJSk';
+    const images = [];
+
+    $(function () {
+      $.ajax({
+        url: `https://api.unsplash.com/search/photos?page=1&query=bali&client_id=${APIKey}`,
+        type: "GET",
+        cache: true,
+        success: function (response) {
+          $.each(response.results, function (key, item) {
+            images.push(item.urls.small);
+
+            // Append the image to the gallery
+            const galleryItem = $('<a>').addClass('gallery-item').attr('title', 'picture.image').attr('data-jbox-image', 'image').attr('href', item.urls.small).attr('target', '_blank').attr('data-aos', 'fade-up');
+            const img = $('<img>').attr({
+              src: item.urls.small,
+              alt: 'gambar',
+            }).addClass('gallery-image');
+
+            galleryItem.append(img);
+            $('#gallery').append(galleryItem);
+          });
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
